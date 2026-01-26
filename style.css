@@ -12,7 +12,8 @@ body {
 #main {
     position: absolute;
     display: flex;
-    gap: 200px;
+    gap: 180px;
+    max-height:30px ;
     top: 50%;
     left: 50%;
     transform: translate(-50%);
