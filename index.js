@@ -48,16 +48,29 @@ check.addEventListener("click", function() {
         rng = results.textContent;
     }
     else {
-        results.textContent = 0;
-        results_int = 0;
-        rng = 0;
-        rng = Math.floor(Math.random() * (100 + 1));
-        console.log(rng);
-        myLoop();
-        dict[combinaison] = rng;
-        dict[combinaison_rv] = rng;
-        console.log(combinaison);
-        console.log(dict);
+        if (combinaison == "roméojuliette" || combinaison == "julietteroméo") {
+            results.textContent = 0;
+            results_int = 0;
+            rng = 101;
+            console.log(rng);
+            myLoop();
+            dict[combinaison] = rng;
+            dict[combinaison_rv] = rng;
+            console.log(combinaison);
+            console.log(dict);
+        }
+        else {
+            results.textContent = 0;
+            results_int = 0;
+            rng = 0;
+            rng = Math.floor(Math.random() * (100 + 1));
+            console.log(rng);
+            myLoop();
+            dict[combinaison] = rng;
+            dict[combinaison_rv] = rng;
+            console.log(combinaison);
+            console.log(dict);
+        }
     }
 
     if (rng <= 9) {
