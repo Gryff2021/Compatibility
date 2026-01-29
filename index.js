@@ -27,7 +27,7 @@ function myLoop() {
     }, 10)
 }
 
-check.addEventListener("click", function() {
+function mainCode() {
     body.backgroundColor = "white";
     name_1 = document.getElementById("name_1").value;
     name_2 = document.getElementById("name_2").value;
@@ -120,5 +120,15 @@ check.addEventListener("click", function() {
     else if (rng == 101) {
         body.backgroundColor = "#f21ca3";
         message.textContent = "Hasard ? 😏";
+    }
+}
+
+check.addEventListener("click", function() {
+    mainCode();
+})
+
+document.addEventListener("keydown", function() {
+    if (event.key == "Enter") {
+        mainCode();
     }
 })
