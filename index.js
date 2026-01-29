@@ -1,6 +1,7 @@
 let name_1;
 let name_2;
 let combinaison;
+let combinaison_rv;
 let me_12;
 let me_22;
 let rng;
@@ -33,20 +34,28 @@ check.addEventListener("click", function() {
     me_12 = name_1.toLowerCase();
     me_22 = name_2.toLowerCase();
     combinaison = me_12 + me_22;
+    combinaison_rv = me_22 + me_12;
+    combinaison_rv = combinaison_rv.replaceAll(" ", "");
     combinaison = combinaison.replaceAll(" ", "");
 
 
     if (Object.keys(dict).includes(combinaison)) {
         results.textContent = dict[combinaison];
+        rng = results.textContent;
+    }
+    if (Object.keys(dict).includes(combinaison_rv)) {
+        results.textContent = dict[combinaison_rv];
+        rng = results.textContent;
     }
     else {
         results.textContent = 0;
         results_int = 0;
         rng = 0;
-        rng = Math.floor(Math.random() * 100);
+        rng = Math.floor(Math.random() * (100 + 1));
         console.log(rng);
         myLoop();
         dict[combinaison] = rng;
+        dict[combinaison_rv] = rng;
         console.log(combinaison);
         console.log(dict);
     }
@@ -94,5 +103,9 @@ check.addEventListener("click", function() {
     else if (rng == 100) {
         body.backgroundColor = "#f423a8";
         message.textContent = "À quand le mariage 👰";
+    }
+    else if (rng == 101) {
+        body.backgroundColor = "#f21ca3";
+        message.textContent = "Hasard ? 😏";
     }
 })
